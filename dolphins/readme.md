@@ -1,5 +1,20 @@
 # README
 
+    def switch_to_numbers(G, C):
+        num_comm = len(C)
+        a = []
+        for c in range(num_comm):
+            a.append([0])
+        for i, node in enumerate(G.nodes()):
+            for j in range(num_comm):
+                if node in C[j]:
+                    a[j].append(i)
+                    print('node ', node, ' with number ', i, ' is in comm ', j)
+        for c in range(num_comm):
+            a[c] = a[c][1:]
+        return a
+
+
 The file dolphins.gml contains an undirected social network of frequent
 associations between 62 dolphins in a community living off Doubtful Sound,
 New Zealand, as compiled by Lusseau et al. (2003).  Please cite
